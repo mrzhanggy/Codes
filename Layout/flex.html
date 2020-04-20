@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flex</title>
+  <style>
+    *{
+      padding: 0;margin: 0;list-style: none;
+    }
+    .box {
+      width: 300px;
+      height: 300px;
+      border: 1px solid cadetblue;
+      margin: 100px auto;
+      display: flex;
+
+      /* 
+        设置主轴的排列方向 
+        row row-reverse column column-reverse 
+      */
+      /* flex-direction: row;   */
+
+      /* 
+        设置主轴方向的子项是否换行
+          nowrap wrap wrap-reverse 
+      */
+      /* flex-wrap: nowrap;  */
+
+      /* flex-flow: 是 flex-direction 和 flex-wrap 的复合写法  */
+      flex-flow: row nowrap;
+
+      /* 
+        设置主轴方向上中子项的排列方式以及分布方式
+          对齐方式：
+            flex-start: 主轴起始位置对齐
+            flex-end: 主轴结束为止对齐
+            center: 居中对齐
+
+          分布方式：
+            space-around:  周围分布，每个子项所占有空余空间是相同的
+            space-between: 两侧对齐分布，空余空间子项之间等比分配
+            space-evenly: 均匀分布，容器和子项之间的空间均匀分配
+
+      */
+      justify-content: space-between;
+
+      /* 
+        设置子项们在侧轴的对齐方式
+        flex-start: 侧轴起始位置
+        flex-end: 侧轴的结束位置
+        center: 侧轴居中位置
+        stretch: 侧轴方向拉伸子项（注：子项设置固定高度则失效）
+       */
+      align-items: flex-start;
+
+      /* 
+        设置子项在侧轴的对齐方式和分布方式
+          flex-start:
+          flex-end:
+          center:
+          stretch:
+       */
+       align-content: flex-start;
+    }
+    .box li {
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      border: firebrick 1px solid;
+      box-sizing: border-box;
+      background-color: cornflowerblue;
+    }
+
+    /* order: 设置子项的排列属性，所有的子项默认order:0 */
+    .box li:nth-child(6) {
+      order: -1;
+    }
+
+    /* flex-grow: 设置子项占用的空余空间 */
+    .box li:nth-child(13) {
+      /* flex-grow: 1; */
+    }
+    .box li:nth-child(14) {
+      flex-grow: 1;
+    }
+
+    /* flex-shrink, 设置某个子项进行收缩，只有在这一行子项总和的宽或高大于容器是可以触发 */
+    .box li:nth-child(1) {
+      flex-shrink: -10;
+    }
+
+    /* align-self: 单独控制某个子项的对齐方式 */
+    .box li:nth-child(4) { 
+      align-self: flex-end;
+    }
+  </style>
+</head>
+<body>
+  <ul class="box">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <!-- <li>7</li>
+    <li>8</li>
+    <li>9</li>
+    <li>10</li>
+    <li>11</li>
+    <li>12</li>
+    <li>13</li> -->
+    <!-- <li>14</li> -->
+    
+  </ul>
+  
+</body>
+</html>

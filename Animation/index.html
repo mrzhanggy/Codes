@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="筛子">
+	<title>Document</title>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
+		ul, ol {
+			list-style: none;
+		}
+		.box {
+			width: 300px;
+			height: 300px;
+			border: 1px solid #999;
+			margin: 100px auto;
+			perspective: 200px;
+		}
+		.box ul {
+			height: 100px;
+			width: 100px;
+			position: relative;
+			top: 100px;
+			left: 100px;
+			transition: all 2s;
+			transform-style: preserve-3d;
+			transform-origin: center center -50px;
+		
+		}
+		/* .box .ul2 {
+			backface-visibility:hidden;
+		}
+		 */
+		.box li {
+			width: 100px;
+			height: 100px;
+			position: absolute;
+			text-align: center;
+			line-height: 100px;
+			font-size: 30px;
+			background-color: cadetblue;
+			opacity: .8;
+			transition: .5;
+			/* backface-visibility:unset; */
+		}
+		.box ul li:nth-child(1) {
+			background-color: firebrick;
+		}
+		.box ul li:nth-child(2) {
+			top: 0;
+			left: 100px;
+			transform-origin: left;
+			transform: rotateY(90deg);
+			background-color: chartreuse;
+		}
+		ul li:nth-child(3) {
+			top: 100px;
+			left: 0;
+			transform-origin: top;
+			transform: rotateX(-90deg);
+			background-color: green;
+		}
+		ul li:nth-child(4) {
+			top: 0;
+			right: 100px;
+			transform-origin: right;
+			transform: rotateY(-90deg);
+			background-color: yellow;
+		}
+		.box ul li:nth-child(5) {
+			top: -100px;
+			left: 0;
+			transform-origin: bottom;
+			transform: rotateX(90deg);
+			background-color: blue;
+		}
+		.box ul li:nth-child(6) {
+			top: 0;
+			right: 0;
+			transform-origin: right;
+			transform: translateZ(-100px);
+			background-color: pink;
+		}
+
+		.box:hover ul{
+	
+			transform: rotateY(360deg);
+			/* animation: rotate infinite; */
+		}
+@keyframes rotate {
+	0%{ rotateY: (120deg);}
+	50%{ rotateY: (240deg);}
+	100%{ rotateY: (360deg);}
+}
+
+	.box2 {
+
+	}
+	</style>
+</head>
+
+<body>
+	<div class="box">
+		<ul>
+			<li class="item1">1</li>
+			<li class="item2">2</li>
+			<li class="item3">3</li>
+			<li class="item4">4</li>
+			<li class="item5">5</li>
+			<li class="item6">6</li>
+		</ul>
+		
+	</div>
+	<div class="box">
+		<ul class="ul2">
+			<li class="item1">1</li>
+			<li class="item2">2</li>
+			<li class="item3">3</li>
+			<li class="item4">4</li>
+			<li class="item5">5</li>
+			<li class="item6">6</li>
+		</ul>
+		
+	</div>
+</body>
+
+</html>

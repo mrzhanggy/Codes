@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+    .box {
+      width: 300px;
+      height: 300px;
+      margin: 100px auto;
+      border: 1px solid red;
+      box-sizing: border-box;
+      display: grid;
+      /* 设置表格的行和列 */
+      /* grid-template-rows: repeat(3, 1fr);
+      grid-template-columns: repeat(3, 1fr); */
+
+      /* 给网格划分区域 */
+      /* grid-template-areas: 
+      "box1 box1 box2"
+      "box3 box3 box2"
+      "box3 box3 box2"; */
+
+      /* grid-template 是 grid-template-rows+ grid-template-columns + grid-template-area 的复合属性*/
+      grid-template: 
+      "box1 box1 box1" 1fr
+      "box3 box3 box2" 1fr
+      "box3 box3 box2" 1fr
+      /1fr 1fr 1fr;
+
+      /* grid-row-gap、grid-column-gap 设置横向和纵向的网格间隙 */
+      /* grid-row-gap: 5px;
+      grid-column-gap: 5px; */
+
+      /* grid-gap 是 grid-row-gap 和 grid-column-gap的复合写法 */
+      grid-gap: 5px;
+
+    }
+    .box li {
+      text-align: center;
+      line-height: 100px;
+      box-sizing: border-box;
+    }
+    .box li:nth-child(1) {
+      grid-area: box1;
+      background-color: red;
+    }
+    .box li:nth-child(2) {
+      grid-area: box2;
+      background-color: blue;
+    }
+    .box li:nth-child(3) {
+      grid-area: box3;
+      background-color: yellow;
+    }
+
+    .box2 {
+      width: 300px;
+      height: 300px;
+      margin: 100px auto;
+      border: 1px solid red;
+      box-sizing: border-box;
+      display: grid;
+      grid-template-rows: repeat(3, 1fr);
+      grid-template-columns: repeat(3, 1fr);
+      /* justify-items: center; */
+      /* align-items: start; */
+      justify-content: end;
+    }
+    .box2 li {
+      text-align: center;
+      line-height: 100px;
+    }
+    .box2 li:nth-child(1) {
+      background-color: red;
+    }
+    .box2 li:nth-child(2) {
+      background-color: green;
+    }
+    .box2 li:nth-child(3) {
+      background-color: blue;
+    }
+
+  </style>
+</head>
+<body>
+  <ul class="box">
+    <li class="1">1</li>
+    <li class="2">2</li>
+    <li class="3">3</li>
+    <!-- <li class="4">4</li>
+    <li class="5">5</li>
+    <li class="6">6</li>
+    <li class="7">7</li>
+    <li class="8">8</li>
+    <li class="9">9</li> -->
+  </ul>  
+  <ul class="box2">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+</body>
+</html>
